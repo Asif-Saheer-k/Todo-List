@@ -53,6 +53,9 @@ function App() {
   const eraser = () => {
     setTodo("");
   };
+  const handNUll=()=>{
+    setTodo("");
+  }
   return (
     <div className="App">
       <div className="app">
@@ -61,7 +64,7 @@ function App() {
         </div>{" "}
         <div className="subHeading">
           {" "}
-          <br /> <h2>Whoop, it's Wednesday 🌝 ☕ </h2>{" "}
+         <br /> <h2>Whoop, it's {toDoDay}sday 🌝 ☕ </h2>{" "} 
         </div>{" "}
         <div className="input">
           {" "}
@@ -73,9 +76,9 @@ function App() {
           />{" "}
           <i class="fa-solid fa-eraser" onClick={eraser}></i>
           <i
-            onClick={() =>
-              setTodos([...toDos, { id: Date.now(), text: toDo, staus: false }])
-            }
+            onClick={() =>{if(toDo!=''){
+              setTodos ([...toDos, { id: Date.now(), text: toDo, staus: false }],handNUll())
+            }}}
             className="fas fa-plus"
           ></i>{" "}
         </div>{" "}
